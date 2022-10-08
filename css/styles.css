@@ -5,6 +5,7 @@ body {
 
 .business-cards {
     margin-top: 15px;
+    display: none;
 }
 
 .card {
@@ -24,6 +25,11 @@ body {
 }
 .login-fields {
     text-align: center;
+    display: block;
+}
+
+#login-header {
+    display: block;
 }
 
 #name {
@@ -33,6 +39,7 @@ body {
 
 .signup-fields {
     text-align: center;
+    display: block;
 }
 
 #signup-header {
@@ -45,4 +52,9 @@ h1 {
 
 .number-field {
      text-align: center;
+     display: none;
+}
+
+#user-header {
+    display: none;
 }
