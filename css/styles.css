@@ -1,21 +1,33 @@
 body {
     background-color: darkgrey;
+    font-family: Helvetica, Arial, sans-serif;
+}
+
+.business-cards {
+    margin-top: 15px;
 }
 
 .card {
     background-color: lightblue;
     border-radius: 20px;
-    /* Change height to auto eventually*/
-    height: 250px;
-    margin: auto;
+    height: auto;
+    margin: 15px auto 15px auto;
+    padding: 15px 15px 15px 15px;
     width: 33%;
     text-align: center;
 }
 
+#card-data {
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: left;
+    padding: 5px 15px 5px 15px;
+}
+
 #name {
-    margin-left: 10px;
+    font-family: Helvetica, Arial, sans-serif;
     text-align: left;
 }
+
 
 h1 {
     text-align: center;
