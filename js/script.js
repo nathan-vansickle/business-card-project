@@ -103,9 +103,78 @@ function addUser() {
     } else {
         users.set(email, password);
         // Go to card creation wizard
+        document.getElementById('creator-header').style.display = 'block';
+        document.querySelector('.form').style.display = 'block';
+
+        document.querySelector('.login-fields').style.display = 'none';
+        document.querySelector('.signup-fields').style.display = 'none';
+        document.getElementById('login-header').style.display = 'none';
+        document.getElementById('signup-header').style.display = 'none';
+
     }
     
 }
 
 loginButton.addEventListener('click', checkCreds);
 signupButton.addEventListener('click', addUser)
+
+/*--------------CARD CREATOR--------------*/
+let name = undefined;
+let company = undefined;
+let position = undefined;
+let email = undefined;
+let linkedIn = undefined;
+let phone = undefined;
+
+/*-----ELEMENTS-----*/
+const nameField = document.getElementById('name');
+const companyField = document.getElementById('company');
+const positionField = document.getElementById('position');
+const phoneField = document.getElementById('phone');
+const linkedInField = document.getElementById('linkedIn');
+
+const createButton = document.getElementById('form-button');
+
+function createCard() {
+
+    console.log("boink");
+    if(nameField.value.length == 0) {
+
+        alert("You must provide a name to continue");
+
+    } else if(companyField.value.length == 0) {
+
+        alert("You must provide a company to continue");
+
+    } else if(positionField.value.length == 0) {
+
+        alert("You must provide a position to continue");
+
+    } else if(phoneField.value.length == 0) {
+
+        alert("You must provide a phone number to continue");
+
+    } else if(linkedInField.value.length == 0) {
+
+        alert("You must provide a linkedIn profile to continue");
+
+    } else {
+
+        name = nameField.value;
+        company = companyField.value;
+        position = positionField.value;
+        phone = phoneField.value;
+        linkedIn = linkedInField.value;
+
+        document.getElementById('creator-header').style.display = 'none';
+        document.querySelector('.form').style.display = 'none';
+
+        document.getElementById('user-header').style.display = 'block';
+        document.querySelector('.number-field').style.display = 'block';
+        businessCards.style.display = 'block';
+
+    }
+
+}
+
+createButton.addEventListener('click', createCard);
