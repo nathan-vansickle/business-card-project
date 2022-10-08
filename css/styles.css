@@ -31,6 +31,13 @@ body {
     text-align: left;
 }
 
+.signup-fields {
+    text-align: center;
+}
+
+#signup-header {
+    margin-top: 100px;
+}
 
 h1 {
     text-align: center;
