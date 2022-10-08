@@ -1,0 +1,29 @@
+body {
+    background-color: darkgrey;
+    font-family: Helvetica, Arial, sans-serif;
+}
+
+.form {
+    background-color: lightgrey;
+    margin: auto;
+    width: 350px;
+    border: 3px solid black;
+    padding: 10px;
+}
+
+td.left {
+    text-align: left;
+}
+
+td.right {
+    text-align: right;
+}
+
+.submit-button {
+    padding: 10px;
+    text-align: center;
+}
+
+h1 {
+    text-align: center;
+}
