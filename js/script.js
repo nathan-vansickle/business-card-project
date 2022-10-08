@@ -16,11 +16,13 @@ function updateCardList() {
 
  async function addCard(number) {
     let cardObject = await getJSON(number);
-
-    console.log(cardObject.company);
     const html = generateHTML(cardObject);
 
     businessCards.innerHTML += html;
+    
+    let connections = new Set(cardObject.connections);
+    connections.add(number);
+    cardObject.connections = Array.from(connections);
 }
 
 function generateHTML(cardObject) {
