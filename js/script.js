@@ -14,29 +14,36 @@ function updateCardList() {
 }
 
 function addCard(number) {
-    const html = generateHTML();
+    const cardObject = getJSON(number);
+    const html = generateHTML(cardObject);
 
     businessCards.innerHTML += html;
 }
 
-function generateHTML(name, company, pos, phone, ) {
+function generateHTML(cardObject) {
     const html = `
     <div class="card">
         <div class="card-data" id="card-data">
-            <h1 id="name">Name</h1>
-            <p>Company</p>
-            <p>Position</p>
-            <p>XXX-XXX-XXXX</p>
-            <p>me@domain.com</p>
-            <p>LinkedIn</p>
+            <h1 id="name">` + cardObject.name + `</h1>
+            <p>` + cardObject.company + `</p>
+            <p>` + cardObject.position + `</p>
+            <p>` + cardObject.phone + `</p>
+            <p>` + cardObject.email + `</p>
+            <p>` + cardObject.linkedIn + `</p>
         </div>
     </div>`
 
     return html;
 }
 
-async function getJSON() {
-    const requestURL = null;
+async function getJSON(cardNumber) {
+    const requestURL = "https://raw.githubusercontent.com/nathan-vansickle/business-card-project/main/json/" + cardNumber + ".json";
+    const request = new Request(requestURL);
+
+    const response = await fetch(request);
+    const cardObject = await response.json();
+
+    return cardObject;
 }
 
 button.addEventListener('click', updateCardList);
