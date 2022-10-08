@@ -1,8 +1,9 @@
 "use strict";
 
-let i = 1;
 
-//---ELEMENTS---
+
+
+/*---ELEMENTS--- */
 const button = document.getElementById('btn');
 const numberField = document.getElementById("number");
 const businessCards = document.querySelector('.business-cards');
@@ -13,8 +14,10 @@ function updateCardList() {
     addCard(cardId);
 }
 
-function addCard(number) {
-    const cardObject = getJSON(number);
+ async function addCard(number) {
+    let cardObject = await getJSON(number);
+
+    console.log(cardObject.company);
     const html = generateHTML(cardObject);
 
     businessCards.innerHTML += html;
@@ -43,6 +46,7 @@ async function getJSON(cardNumber) {
     const response = await fetch(request);
     const cardObject = await response.json();
 
+    console.log(cardObject.company);
     return cardObject;
 }
 
